@@ -1,5 +1,9 @@
-import { Deck } from "./deck";
+import { CardStack } from "./card-stack";
 
-const deck = new Deck();
-deck.shuffle()
-console.log(deck.cards)
+const deck = new CardStack();
+deck.shuffle();
+console.log(deck.cards);
+const twoCards = deck.takeCards(2);
+console.log(deck.cards);
+deck.addCardsToTop(...twoCards);
+console.log(deck.cards);
