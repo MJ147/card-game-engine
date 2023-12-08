@@ -3,7 +3,7 @@ import { Rank } from "./enum/rank.enum";
 import { Suit } from "./enum/suit.enum";
 import { Card } from "./models/card.interface";
 
-class Deck extends CardStack {
+export class Deck extends CardStack {
     constructor(cards?: Card[]) {
         super(cards);
     }
