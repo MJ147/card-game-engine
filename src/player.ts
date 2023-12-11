@@ -4,11 +4,16 @@ import { Hand } from "./hand";
 import { PlayerState } from "./enum/player-state.enum";
 
 export class Player {
+    private _name: string;
     private _score: number = 0;
     private _cards: Hand = new Hand();
-    private _state: PlayerState = PlayerState.OutOfGame;
+    state: PlayerState = PlayerState.OutOfGame;
 
-    takeCards(cards: Card[]): void {
+    constructor(name: string) {
+        this._name = name;
+    }
+
+    addCards(cards: Card[]): void {
         this._cards.addCardsToTop(...cards);
     }
 
@@ -16,7 +21,7 @@ export class Player {
         return this._cards.takeSpecificCards(...cards)
     }
 
-    changeScore(points: number): void {
+    addToScore(points: number): void {
         this._score =+ points;
     }
 

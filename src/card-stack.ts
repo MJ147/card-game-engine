@@ -28,7 +28,7 @@ export class CardStack {
         return Math.floor(Math.random() * (this.numberOfCards - 1))
     }
 
-    takeCards(numberOfCards: number, idx: number = 0): Card[] {
+    protected _removeCards(numberOfCards: number, idx: number = 0): Card[] {
         return this._cards.splice(idx, numberOfCards);
     }
 

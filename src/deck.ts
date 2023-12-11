@@ -12,6 +12,10 @@ export class Deck extends CardStack {
         this._cards = this._getFreshDeck(ranks, suits)
     }
 
+    dealCards(numberOfCards: number): Card[] {
+        return this._removeCards(numberOfCards);
+    }
+
     private _getFreshDeck(ranks?: Rank[], suits?: Suit[]): Card[] {
         suits = suits || Object.keys(Suit).map((v) => (Number(v))).filter((v) => !isNaN(v));
         ranks = ranks || Object.keys(Rank).map((v) => (Number(v))).filter((v) => !isNaN(v));

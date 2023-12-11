@@ -1,6 +1,7 @@
 import { BeatenCardsBehavior } from "src/enum/beaten-cards-behavior";
 import { Rank } from "src/enum/rank.enum";
 import { Suit } from "src/enum/suit.enum";
+import { WinningCondition } from "src/enum/winning-condition";
 
 export interface GameRules {
     numberOfPlayers: number;
@@ -10,5 +11,6 @@ export interface GameRules {
     isAceTheStrongest: boolean;
     higherBeatsLower?: boolean;
     reverseCardOrder?: boolean;
-    BeatenCardBehavior: BeatenCardsBehavior;
+    beatenCardBehavior: BeatenCardsBehavior;
+    winningCondition: WinningCondition;
 }
